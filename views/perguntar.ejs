@@ -5,20 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia perguntas</title>
-    <link rel="stylesheet" href="/css/style.css"> 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
+	<nav class="navbar navbar-light bg-primary">
+		<a class="navbar-brand" href="/">
+			<img src="/img/guia.png" id="logo-cabecalho">
+		</a>
+	</nav>
 	<div class="container">
-		<h3>Realizar pergunta:</h3>
-		<form>
-			<label>Título</label>
-			<input type="text" placeholder="Título" class="form-control">
-			<br><label>Descrição</label>
-			<textarea placeholder="Descreva sua pergunta aqui" class="form-control"></textarea>
-			<br>
-			<button class="btn btn-success">Perguntar</button>
-		</form>
+
+		<div class="card" id="formulario-pergunta">
+			<div class="card-header">
+				<h3>Realizar pergunta:</h3>
+			</div>
+			<div class="card-body">
+				<form>
+					<label>Título</label>
+					<input type="text" placeholder="Título" class="form-control">
+					<br><label>Descrição</label>
+					<textarea placeholder="Descreva sua pergunta aqui" class="form-control"></textarea>
+					<br>
+					<button class="btn btn-success">Perguntar</button>
+				</form>
+			</div>
+		</div>
+
 	</div>
 </body>
 
