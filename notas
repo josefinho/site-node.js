@@ -1,0 +1,40 @@
+## Documento para anotações sobre Node e Express
+
+## = conceitos ou fatos
+#  = como fazer algo
+
+# INICIANDO O GERENCIADOR DE PACOTES EM UM PROJETO:
+npm init -> serve para iniciar os diretórios que gerenciam modulos e dependências do projeto. É a primeira coisa a se fazer ao iniciar um novo projeto.
+
+## ESTRUTURA DE DIRETORIOS
+O express segue um padrão de diretórios, o que significa que alguns métodos buscam arquivos dentro de certos diretórios. Como o  /view que é responsável pelos arquivos html/ejs.
+
+# PASSANDO VALORES DO BACK PRO FRONT END
+res.render("arquivo.ejs", {nome1: valor1, nome2: valor2});
+
+Para exibir no front end, no arquivo .ejs é feito:
+<%= nome1 %>
+<%= nome2 %>
+
+# RECEBENDO PARÂMETROS DE URL COMO VARIÁVEL NO BACK END
+app.get("/:param1/:param2", (req, res) => {
+	let a = req.params.param1;
+	let b = req.params.param2;
+});
+
+# USANDO PARTIALS
+Partials são formas de a view engine permitir colar pedaços de HTML/EJS em outros arquivos.
+É feito da seguinte forma: <%- include('partials/header.ejs') %>
+
+# PEGANDO DADOS DE FORMULÁRIOS
+Para pegar dados enviados do front end através de um formulário, é utilizado um middleware chamado body-parser (instalado com npm). Ficando da seguinte forma:
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+No arquivo .ejs, algumas tags do formulário devem receber os atributos name="" e method="POST", enquanto no código back end é feito:
+
+app.post("/rota", (req, res) => {
+	let a = req.body.{nome do atributo name=""};
+});
